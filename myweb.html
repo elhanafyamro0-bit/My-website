@@ -4,15 +4,69 @@
   <meta charset="UTF-8">
   <title>Eruhanafui Amuro</title>
 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
   <style>
 
+    @media (max-width: 600px) {
+  /* 全体の文字を少し大きく */
+  html, body { font-size: 18px; }
+
+  /* 左余白レイアウトを解除 */
+  header, footer, main { margin-left: 0; }
+
+  /* サイドバーを上部の横長バーに */
+  aside {
+    position: sticky;   /* 上部に貼り付けたい場合は sticky、スクロール固定不要なら static に */
+    top: 0;
+    width: 100%;
+    height: auto;
+    background: rgb(34,34,34);
+    padding: 10px;
+    box-sizing: border-box;
+    z-index: 5;         /* ヘッダーの下に埋もれないように */
+  }
+
+  /* ナビを横並び・折り返し */
+  aside ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center; /* 中央寄せ */
+  }
+
+  aside li { margin: 0; }
+
+  /* タップしやすいボタン風に */
+  aside a.nav {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid #545454;
+    text-decoration: none;
+  }
+
+  /* メインの左余白を解除 */
+  main { margin-left: 0; padding: 16px; }
+
+  /* ヘッダー/フッターのフォントも調整（任意） */
+  header h1 { font-size: 22px; }
+  footer { font-size: 12px; padding: 8px; }
+
+  /* フッターが画面を圧迫する場合は固定を解除（任意） */
+  /* footer { position: static; } */
+}
+
+
    @media (max-width: 600px) {
-      aside { position: static; width: 100%; height: auto;
-        margin-top: 0; text-align: center; }
-      main { margin-left: 0; }
-      header, footer { margin-left: 0;
-       font-size: 12px;}
-    }
+  body { font-size: 18px; }  /* 全体の文字を大きめに */
+  header, footer { font-size: 14px; }
+ }
+
 
     header { margin-left: 200px; }
     html, body{
