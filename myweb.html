@@ -1,109 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Eruhanafui Amuro</title>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
+    /* ===== 共通（PC/タブレット基準） ===== */
+    html, body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      margin: 0;
+    }
 
-  
-
+    h1 { font-size: 30px; }
+    a  { font-size: 16px; color: #efe638; text-decoration: none; }
 
     header { margin-left: 200px; }
-    html, body{
-      background-color: black; color: white;
-      font-family: Arial; font-size: 15px; margin:0;
-    }
-    h1 { font-size: 30px; }
-    a{ font-size: 16px; color: #efe638; text-decoration: none; }
 
     aside {
       position: fixed; top: 0; left: 0;
       width: 160px; height: 100vh;
-      background: rgb(34, 34, 34); padding: 20px; box-sizing: border-box;
+      background: rgb(34, 34, 34);
+      padding: 20px;
+      box-sizing: border-box;
     }
-    main { margin-left: 200px; padding: 20px; }
-
-    aside ul { list-style: none; padding: 0; margin:0; }
+    aside ul { list-style: none; padding: 0; margin: 0; }
     aside li { margin: 5px 0; }
     aside a.nav {
-      display:block; padding:8px 10px; border-radius:8px; color:#efe638;
+      display: block;
+      padding: 8px 10px;
+      border-radius: 8px;
+      color: #efe638;
     }
-    aside a.nav:hover { background:#545454; }
-   
+    aside a.nav:hover { background: #545454; }
+
+    main { margin-left: 200px; padding: 20px; }
+
     .section { display: none; }
     .section.active { display: block; }
 
     footer {
-        position: fixed; bottom: 0; right: 0; width: 100%; text-align: center;
-        background: rgb(34, 34, 34);
-        padding: 5px; box-sizing: border-box;
-        font-size: 5px;
-    
-
+      position: fixed; bottom: 0; right: 0;
+      width: 100%; text-align: center;
+      background: rgb(34, 34, 34);
+      padding: 5px;
+      box-sizing: border-box;
+      font-size: 5px;
     }
 
-     @media (max-width: 600px) {
-  /* 全体の文字を少し大きく */
-  html, body { font-size: 18px; }
+    /* ===== スマホ（幅600px以下） ===== */
+    @media (max-width: 600px) {
+      /* 文字を見やすく */
+      html, body { font-size: 18px; }
 
-  /* 左余白レイアウトを解除 */
-  header, footer, main { margin-left: 0; }
+      /* 左余白ベースのレイアウトを解除 */
+      header, main { margin-left: 0; }
 
-  /* サイドバーを上部の横長バーに */
-  aside {
-    position: sticky;   /* 上部に貼り付けたい場合は sticky、スクロール固定不要なら static に */
-    top: 0;
-    width: 100%;
-    height: auto;
-    background: rgb(34,34,34);
-    padding: 10px;
-    box-sizing: border-box;
-    z-index: 5;         /* ヘッダーの下に埋もれないように */
-  }
+      /* サイドバーを上部の横長バーに */
+      aside {
+        position: sticky;   /* 上部に貼り付け */
+        top: 0;
+        width: 100%;
+        height: auto;
+        background: rgb(34,34,34);
+        padding: 10px;
+        z-index: 5;
+      }
+      /* ナビを横並び・中央寄せ */
+      aside ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+      }
+      aside li { margin: 0; }
+      aside a.nav {
+        display: inline-block;
+        padding: 8px 12px;
+        border-radius: 10px;
+        border: 1px solid #545454;
+      }
 
-  /* ナビを横並び・折り返し */
-  aside ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    justify-content: center; /* 中央寄せ */
-  }
+      /* 本文 */
+      main { padding: 16px; }
 
-  aside li { margin: 0; }
+      /* 見出しなど微調整 */
+      header h1 { font-size: 22px; }
+      footer   { font-size: 12px; padding: 8px; }
 
-  /* タップしやすいボタン風に */
-  aside a.nav {
-    display: inline-block;
-    padding: 8px 12px;
-    border-radius: 10px;
-    border: 1px solid #545454;
-    text-decoration: none;
-  }
-
-  /* メインの左余白を解除 */
-  main { margin-left: 0; padding: 16px; }
-
-  /* ヘッダー/フッターのフォントも調整（任意） */
-  header h1 { font-size: 22px; }
-  footer { font-size: 12px; padding: 8px; }
-
-  /* フッターが画面を圧迫する場合は固定を解除（任意） */
-  /* footer { position: static; } */
-}
-
-
-   @media (max-width: 600px) {
-  body { font-size: 18px; }  /* 全体の文字を大きめに */
-  header, footer { font-size: 14px; }
- }
- 
+      /* フッター固定を解除して重なり防止 */
+      footer { position: static; }
+    }
   </style>
 </head>
 <body>
@@ -169,30 +159,27 @@
     </section>
 
     <section id="Privacy" class="section">
-        <h2>Privacy Policy</h2>
-        <p>1. Purpose of Use of Personal Information
-
-When contacting this site (for example, via email), users may be asked to provide personal information such as their name and email address.
-This information will only be used to respond to inquiries or provide necessary communication and will not be used for any other purposes.
-<br><br>
-2. Provision of Personal Information to Third Parties
-
-This site will not disclose or provide personal information to third parties without the consent of the individual concerned, except when required by law.
-<br><br>
-3. External Links
-
-This site may contain links to external services such as LinkedIn.
-Please note that this site is not responsible for the handling of personal information on linked sites. For details, refer to the privacy policies of each external service.
-<br><br>
-4. Disclaimer
-
-This site strives to provide accurate information, but it does not guarantee the completeness or accuracy of the content.
-The operator of this site will not be held responsible for any damages caused by the use of information posted here.
-Furthermore, this site assumes no responsibility for information, services, or content provided on other websites accessed via external links.
-<br><br>
-5. Changes to This Policy
-
-This Privacy Policy may be revised or updated when necessary. The latest version will always be available on this page.</p>
+      <h2>Privacy Policy</h2>
+      <p>
+        1. Purpose of Use of Personal Information<br><br>
+        When contacting this site (for example, via email), users may be asked to provide personal information such as their name and email address.
+        This information will only be used to respond to inquiries or provide necessary communication and will not be used for any other purposes.
+        <br><br>
+        2. Provision of Personal Information to Third Parties<br><br>
+        This site will not disclose or provide personal information to third parties without the consent of the individual concerned, except when required by law.
+        <br><br>
+        3. External Links<br><br>
+        This site may contain links to external services such as LinkedIn.
+        Please note that this site is not responsible for the handling of personal information on linked sites. For details, refer to the privacy policies of each external service.
+        <br><br>
+        4. Disclaimer<br><br>
+        This site strives to provide accurate information, but it does not guarantee the completeness or accuracy of the content.
+        The operator of this site will not be held responsible for any damages caused by the use of information posted here.
+        Furthermore, this site assumes no responsibility for information, services, or content provided on other websites accessed via external links.
+        <br><br>
+        5. Changes to This Policy<br><br>
+        This Privacy Policy may be revised or updated when necessary. The latest version will always be available on this page.
+      </p>
     </section>
   </main>
 
@@ -206,17 +193,15 @@ This Privacy Policy may be revised or updated when necessary. The latest version
     }
 
     function handleHashChange() {
-      const idFromHash = (location.hash || '#about').slice(1); 
+      const idFromHash = (location.hash || '#about').slice(1);
       const exists = Array.from(sections).some(sec => sec.id === idFromHash);
       showById(exists ? idFromHash : 'about');
     }
 
-  
     window.addEventListener('DOMContentLoaded', () => {
       if (!location.hash) location.hash = '#about';
       handleHashChange();
     });
-
 
     window.addEventListener('hashchange', handleHashChange);
   </script>
