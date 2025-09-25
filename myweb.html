@@ -9,7 +9,44 @@
 
   <style>
 
-    @media (max-width: 600px) {
+  
+
+
+    header { margin-left: 200px; }
+    html, body{
+      background-color: black; color: white;
+      font-family: Arial; font-size: 15px; margin:0;
+    }
+    h1 { font-size: 30px; }
+    a{ font-size: 16px; color: #efe638; text-decoration: none; }
+
+    aside {
+      position: fixed; top: 0; left: 0;
+      width: 160px; height: 100vh;
+      background: rgb(34, 34, 34); padding: 20px; box-sizing: border-box;
+    }
+    main { margin-left: 200px; padding: 20px; }
+
+    aside ul { list-style: none; padding: 0; margin:0; }
+    aside li { margin: 5px 0; }
+    aside a.nav {
+      display:block; padding:8px 10px; border-radius:8px; color:#efe638;
+    }
+    aside a.nav:hover { background:#545454; }
+   
+    .section { display: none; }
+    .section.active { display: block; }
+
+    footer {
+        position: fixed; bottom: 0; right: 0; width: 100%; text-align: center;
+        background: rgb(34, 34, 34);
+        padding: 5px; box-sizing: border-box;
+        font-size: 5px;
+    
+
+    }
+
+     @media (max-width: 600px) {
   /* 全体の文字を少し大きく */
   html, body { font-size: 18px; }
 
@@ -66,41 +103,7 @@
   body { font-size: 18px; }  /* 全体の文字を大きめに */
   header, footer { font-size: 14px; }
  }
-
-
-    header { margin-left: 200px; }
-    html, body{
-      background-color: black; color: white;
-      font-family: Arial; font-size: 15px; margin:0;
-    }
-    h1 { font-size: 30px; }
-    a{ font-size: 16px; color: #efe638; text-decoration: none; }
-
-    aside {
-      position: fixed; top: 0; left: 0;
-      width: 160px; height: 100vh;
-      background: rgb(34, 34, 34); padding: 20px; box-sizing: border-box;
-    }
-    main { margin-left: 200px; padding: 20px; }
-
-    aside ul { list-style: none; padding: 0; margin:0; }
-    aside li { margin: 5px 0; }
-    aside a.nav {
-      display:block; padding:8px 10px; border-radius:8px; color:#efe638;
-    }
-    aside a.nav:hover { background:#545454; }
-   
-    .section { display: none; }
-    .section.active { display: block; }
-
-    footer {
-        position: fixed; bottom: 0; right: 0; width: 100%; text-align: center;
-        background: rgb(34, 34, 34);
-        padding: 5px; box-sizing: border-box;
-        font-size: 5px;
-    
-
-    }
+ 
   </style>
 </head>
 <body>
